@@ -1,0 +1,3 @@
+<launch>
+  <node name="mockup_fake_node" pkg="ping_mqtt" type="talker.py" output="screen"/>
+</launch>
