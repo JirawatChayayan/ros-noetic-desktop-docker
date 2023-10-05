@@ -18,4 +18,9 @@ For use ros noetic desktop full on windows
 
 6. run cmd  >> $ docker compose up -d
 
+7. Install entension 'Dev Container' in VS Code
+
+
+
+
 
