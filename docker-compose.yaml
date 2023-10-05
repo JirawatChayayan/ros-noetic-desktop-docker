@@ -1,0 +1,26 @@
+version: '3.9'
+
+# Network
+networks:
+  ros_network:
+    name: ros_bridge_network
+    driver: bridge
+
+# Services
+services:
+  ros_master:
+    build:
+      context: ./ros_master
+      dockerfile: Dockerfile
+    container_name: ros_noetic_master
+    restart: always
+    volumes:
+      - ./ros_master/ros_package:/ros_ws/src
+    ports:
+      - 11311:11311
+    environment:
+      - DISPLAY=host.docker.internal:0.0
+      - ROS_HOSTNAME=ros_master
+      - ROS_MASTER_URI=http://ros_master:11311
+    networks:
+      - ros_network
